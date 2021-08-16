@@ -1,0 +1,21 @@
+CREATE TABLE ers.users (
+	user_id serial NOT NULL,
+	fname varchar(120) NULL,
+	lname varchar(120) NULL,
+	email varchar(120) NULL,
+	"password" varchar(120) NULL,
+	CONSTRAINT users_pk PRIMARY KEY (user_id),
+	CONSTRAINT users_un UNIQUE (email)
+);
+
+CREATE TABLE ers.transactions (
+	description varchar(200) NULL,
+	amount double precision NULL,
+	createdat date NULL,
+	trans_id serial NOT NULL,
+	CONSTRAINT transactions_pk PRIMARY KEY (trans_id)
+);
+
+ALTER TABLE ers.users ADD CONSTRAINT users_fk FOREIGN KEY (user_id) REFERENCES ers.transactions(trans_id);
+
+ALTER TABLE ers.users ADD usertype varchar(120) NULL;

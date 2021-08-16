@@ -1,0 +1,30 @@
+CREATE TABLE emresys.users (
+	user_id serial NOT NULL,
+	fname varchar(120) NULL,
+	lname varchar(120) NULL,
+	email varchar(120) NULL,
+	"password" varchar(120) NULL,
+	usertype varchar(120) NULL,
+	CONSTRAINT users_pk PRIMARY KEY (user_id),
+	CONSTRAINT users_un UNIQUE (email)
+);
+
+CREATE TABLE emresys.tickets (
+	ticket_id serial NOT NULL,
+	"type" varchar(100) NULL,
+	amount double precision NULL,
+	createdat timestamp NULL,
+	status varchar(30) NULL,
+	CONSTRAINT tickets_pk PRIMARY KEY (ticket_id)
+);
+
+ALTER TABLE emresys.users ADD CONSTRAINT users_fk FOREIGN KEY (user_id) REFERENCES emresys.tickets(ticket_id);
+
+
+insert into emresys.users (fname, lname, email, password, usertype) values ('boss', 'man', 'bigboss@email.com', 'password', 'manager');
+insert into emresys.users (fname, lname, email, password, usertype) values ('tom', 'tuttle', 'tuttle@email.com', 'password', 'employee');
+
+INSERT INTO emresys.tickets ("type", amount, createdat, status) VALUES ('other', 15000.10, Now (), 'rejected');
+
+
+

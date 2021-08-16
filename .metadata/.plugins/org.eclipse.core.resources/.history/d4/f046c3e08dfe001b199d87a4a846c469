@@ -1,0 +1,10 @@
+package dao;
+
+import common.model.User;
+
+public interface UserDao {
+
+	public void create(Users user);
+	public Users getUser(String email, String password);
+
+}

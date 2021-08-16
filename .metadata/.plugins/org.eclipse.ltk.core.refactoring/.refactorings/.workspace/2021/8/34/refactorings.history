@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;api-serlet-ers&apos; to &apos;api-servlet-ers&apos;&#x0D;&#x0A;- Original element: &apos;api-serlet-ers&apos;&#x0D;&#x0A;- Renamed element: &apos;api-serlet-ers&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;api-serlet-ers&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=api-serlet-ers" name="api-servlet-ers" references="true" stamp="1629080107462" version="1.0"/>
+</session>
