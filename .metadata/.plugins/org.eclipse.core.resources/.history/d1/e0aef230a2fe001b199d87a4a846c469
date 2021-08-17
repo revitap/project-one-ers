@@ -26,7 +26,7 @@ public class UsersDaoImpl implements UsersDao {
 			if (tx != null) {
 				tx.rollback();
 			}
-			throw e;
+			throw e;// new RuntimeException(e.getCause());
 		}
 
 		session.close();
